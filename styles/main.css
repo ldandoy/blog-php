@@ -73,3 +73,61 @@ footer {
   padding: 10px 15px;
   background-color: brown;
 }
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert {
+  padding: 10px;
+  border: 1px solid brown;
+  margin-bottom: 40px;
+}
+
+form {
+  margin: 40px;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+form div label {
+  display: block;
+}
+
+.field {
+  border: 1px solid brown;
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+form input[type="submit"] {
+  background-color: brown;
+  color: antiquewhite;
+  padding: 7px 15px;
+}
+
+.posts {
+  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.post {
+  padding: 10px;
+  border: 1px solid brown;
+  width: 25%;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
