@@ -26,7 +26,14 @@
         <h1><?php echo $post['title']; ?></h1>
     </div>
 
-    <p class="mb-40"><?php echo $post['content']; ?></p>
+    <div class="flex mb-40 gap-40">
+        <div class="w-25">
+            <img src="uploads/<?php echo $post['image']; ?>" alt="<?php echo $post['title']; ?>" />
+        </div>
+        <div class="w-45">
+            <?php echo $post['content']; ?>
+        </div>
+    </div>
 
     <p><a class="btn" href="index.php">Retour</a></p>
 </div>

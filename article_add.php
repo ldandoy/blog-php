@@ -12,15 +12,18 @@
         $title = $_POST['title'];
         $content = $_POST['content'];
         $active = isset($_POST['active']) ? true : false;
+        $filename = $_FILES['data']['name'];
+        move_uploaded_file($_FILES['data']['tmp_name'], 'uploads/'.$filename);
 
-        $sql = "INSERT INTO posts (`title`, `content`, `category_id`, `active`) VALUES (:title, :content, :caterory_id, :active)";
+        $sql = "INSERT INTO posts (`title`, `content`, `category_id`, `active`, `image`) VALUES (:title, :content, :caterory_id, :active, :image)";
         $stmt = $link_mysql->prepare($sql);
 
         $stmt->execute([
             ":title"        => $title,
             ":content"      => $content,
             ":caterory_id"  => $category_id,
-            ":active"       => $active
+            ":active"       => $active,
+            ":image"        => $filename
         ]);
 
         header('Location:category.php?category_id='.$category_id.'&msg=article bien créé !');
@@ -30,7 +33,7 @@
 <div class="container">
     <h1>Ajouter un article</h1>
 
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         <div>
             <label for="title">Titre</label>
             <input class="field" id="title" name="title" />
@@ -42,6 +45,10 @@
         <div>
             <label for="active">Active</label>
             <input type="checkbox" id="active" name="active" />
+        </div>
+        <div>
+            <label for="file">Fichier:</label>
+            <input type="file" id="file" name="data">
         </div>
         <div>
             <input type="submit" name="send" value="Créer" />

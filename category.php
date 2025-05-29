@@ -32,7 +32,7 @@
 ?>
 <?php require_once "_header.php"; ?>
 <div class="container">
-    <div class="flex">
+    <div class="flex aligncenter">
         <h1> Page categorie: <?php echo $row['label']; ?></h1>
         <a class="btn" href="article_add.php?category_id=<?php echo $row['id']; ?>">Ajouter un artticle</a>
     </div>
@@ -44,7 +44,10 @@
 
             <?php foreach ($posts as $post) { ?>
                 <div class="post">
-                    <h2><?php echo $post['title']; ?></h2>
+                    <?php if ($post['image'] != null) { ?>
+                        <img src="uploads/<?php echo $post['image']; ?>" alt="<?php echo $post['title']; ?>" />
+                    <?php } ?>
+                    <h2 class="mb-40"><?php echo $post['title']; ?></h2>
                     <p class="text-end">
                         <a class="btn" href="article.php?article_id=<?php echo $post['id']; ?>">Voir l'article</a>
                     </p>

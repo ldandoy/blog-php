@@ -76,8 +76,11 @@ footer {
 
 .flex {
   display: flex;
-  justify-content: space-between;
+}
+
+.aligncenter {
   align-items: center;
+  justify-content: space-between;
 }
 
 .alert {
@@ -130,4 +133,20 @@ form input[type="submit"] {
 
 .mb-40 {
   margin-bottom: 40px;
+}
+
+.gap-40 {
+  gap: 40px;
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-45 {
+  width: 45%;
+}
+
+img {
+  width: 100%;
 }
